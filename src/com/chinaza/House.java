@@ -6,25 +6,67 @@ public class House {
      *
      * This is the house class which defines the core fields specifically for the house
      * */
-    private boolean hasStatus;
-    private double aRent;
-    private double aCharges;
-    private double aAgency_Percentage;
-    private double aAgreement_Percentage;
-    private double aCaution_Fee;
-    private String aMinutes_Video = null;
-    private String aType;
-    private String aRating;
-    private String aReview;
-    private String aLocation;
-    private String aUser_Owner_Profile; // v2 use the composition pattern to access the user profile;
-    private String aColour_Paint;
-    private String aSize;
-    private int aNumber_Rooms;
-    private int aNumber_Windows;
+    private boolean isTaken = false;
+    private double charges;
+    private double rent;
+    private double agency_Percentage;
+    private double agreement_Percentage;
+    private double caution_Fee;
+    private int number_Windows;
+    private String number_Rooms;
+    private String minutes_Video = null;
+    private String type;
+    private String rating;
+    private String review;
+    private String location;
+    private String owner_Profile; // v2 use the composition pattern to access the user profile;
+    private String colour_Paint;
+    private String size;
+
 
     
 
+
+    // Initializing the fields using a constructor
+    public House(boolean isTaken, double charges, double rent, double agency_Percentage, double agreement_Percentage, double caution_Fee,
+                 int number_Windows, String number_Rooms, String minutes_Video, String type, String rating, String review, String location, String owner_Profile,
+                 String colour_Paint, String size){
+        this.isTaken = isTaken;
+        this.charges = charges;
+        this.rent = rent;
+        this.agency_Percentage = agency_Percentage;
+        this.agreement_Percentage = agreement_Percentage;
+        this.caution_Fee = caution_Fee;
+        this.number_Windows = number_Windows;
+        this.number_Rooms = number_Rooms;
+        this.minutes_Video = minutes_Video;
+        this.type = type;
+        this.rating = rating;
+        this.review = review;
+        this.location = location;
+        this.owner_Profile = owner_Profile;
+
+    }
+
+
+    //Task 1
+
+      public String HouseDetails(){
+          boolean status = this.isTaken;
+          if(status){
+            return "Renew Rent";
+          } else {
+              // show the house details with option of rent
+              System.out.println("Type: " + getType());
+              System.out.println("Rent: " + getRent());
+              System.out.println("Review: " + getReview());
+              System.out.println("Rating: " + getRating());
+              System.out.println("Location: " + getLocation());
+              System.out.println("Number of Rooms: " + getNumber_Of_Rooms());
+
+          }
+         return "Rent";
+      }
 
 
     /**
@@ -33,130 +75,130 @@ public class House {
 
      // Getters and setter for the house class
 
-    public void setHasStatus(boolean hasStatus) {
-        this.hasStatus = hasStatus;
+    public void setIsTaken(boolean isTaken) {
+        this.isTaken = isTaken;
     }
-    public boolean getHasStatus() {
-        return hasStatus;
-    }
-
-    public double getaRent() {
-        return aRent;
+    public boolean getIsTaken() {
+        return isTaken;
     }
 
-    public void setaRent(double aRent) {
-        this.aRent = aRent;
+    public double getRent() {
+        return rent;
     }
 
-    public double getaCharges() {
-        return aCharges;
+    public void setRent(double aRent) {
+        this.rent = aRent;
     }
 
-    public void setaCharges(double aCharges) {
-        this.aCharges = aCharges;
+    public double getCharges() {
+        return charges;
     }
 
-    public double getaAgency_Percentage() {
-        return aAgency_Percentage;
+    public void setCharges(double aCharges) {
+        this.charges = aCharges;
     }
 
-    public void setaAgency_Percentage(double aAgency_Percentage) {
-        this.aAgency_Percentage = aAgency_Percentage;
+    public double getAgency_Percentage() {
+        return agency_Percentage;
     }
 
-    public double getaAgreement_Percentage() {
-        return aAgreement_Percentage;
+    public void setAgency_Percentage(double aAgency_Percentage) {
+        this.agency_Percentage = aAgency_Percentage;
     }
 
-    public void setaAgreement_Percentage(double aAgreement_Percentage) {
-        this.aAgreement_Percentage = aAgreement_Percentage;
+    public double getAgreement_Percentage() {
+        return agreement_Percentage;
     }
 
-    public double getaCaution_Fee() {
-        return aCaution_Fee;
+    public void setAgreement_Percentage(double aAgreement_Percentage) {
+        this.agreement_Percentage = aAgreement_Percentage;
     }
 
-    public void setaCaution_Fee(double aCaution_Fee) {
-        this.aCaution_Fee = aCaution_Fee;
+    public double getCaution_Fee() {
+        return caution_Fee;
     }
 
-    public String getaMinutes_Video() {
-        return aMinutes_Video;
+    public void setCaution_Fee(double aCaution_Fee) {
+        this.caution_Fee = aCaution_Fee;
     }
 
-    public void setaMinutes_Video(String aMinutes_Video) {
-        this.aMinutes_Video = aMinutes_Video;
+    public String getMinutes_Video() {
+        return minutes_Video;
     }
 
-    public String getaType() {
-        return aType;
+    public void setMinutes_Video(String aMinutes_Video) {
+        this.minutes_Video = aMinutes_Video;
     }
 
-    public void setaType(String aType) {
-        this.aType = aType;
+    public String getType() {
+        return type;
     }
 
-    public String getaRating() {
-        return aRating;
+    public void setType(String aType) {
+        this.type = aType;
     }
 
-    public void setaRating(String aRating) {
-        this.aRating = aRating;
+    public String getRating() {
+        return rating;
     }
 
-    public String getaReview() {
-        return aReview;
+    public void setRating(String aRating) {
+        this.rating = aRating;
     }
 
-    public void setaReview(String aReview) {
-        this.aReview = aReview;
+    public String getReview() {
+        return review;
     }
 
-    public String getaLocation() {
-        return aLocation;
+    public void setReview(String aReview) {
+        this.review = aReview;
     }
 
-    public void setaLocation(String aLocation) {
-        this.aLocation = aLocation;
+    public String getLocation() {
+        return location;
     }
 
-    public String getaUser_Owner_Profile() {
-        return aUser_Owner_Profile;
+    public void setLocation(String aLocation) {
+        this.location = aLocation;
     }
 
-    public void setaUser_Owner_Profile(String aUser_Owner_Profile) {
-        this.aUser_Owner_Profile = aUser_Owner_Profile;
+    public String getOwner_Profile() {
+        return owner_Profile;
     }
 
-    public String getaColour_Paint() {
-        return aColour_Paint;
+    public void setOwner_Profile(String aOwner_Profile) {
+        this.owner_Profile = aOwner_Profile;
     }
 
-    public void setaColour_Paint(String aColour_Paint) {
-        this.aColour_Paint = aColour_Paint;
+    public String getColour_Paint() {
+        return colour_Paint;
     }
 
-    public String getaSize() {
-        return aSize;
+    public void setColour_Paint(String aColour_Paint) {
+        this.colour_Paint = aColour_Paint;
     }
 
-    public void setaSize(String aSize) {
-        this.aSize = aSize;
+    public String getSize() {
+        return size;
     }
 
-    public int getaNumber_Rooms() {
-        return aNumber_Rooms;
+    public void setSize(String aSize) {
+        this.size = aSize;
     }
 
-    public void setaNumber_Rooms(int aNumber_Rooms) {
-        this.aNumber_Rooms = aNumber_Rooms;
+    public String getNumber_Of_Rooms() {
+        return number_Rooms;
     }
 
-    public int getaNumber_Windows() {
-        return aNumber_Windows;
+    public void setNumber_Of_Rooms(String  aNumber_Rooms) {
+        this.number_Rooms = aNumber_Rooms;
     }
 
-    public void setaNumber_Windows(int aNumber_Windows) {
-        this.aNumber_Windows = aNumber_Windows;
+    public int getNumber_Of_Windows() {
+        return number_Windows;
+    }
+
+    public void setNumber_Of_Windows(int aNumber_Windows) {
+        this.number_Windows = aNumber_Windows;
     }
 }

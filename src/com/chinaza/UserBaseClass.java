@@ -7,88 +7,96 @@ public class UserBaseClass {
      * This is the user base class which defines the basic fields of the user.
      * */
 
-    private String aFirst_Name;
-    private String aLast_Name;
-    private String aGender;
-    private String aOccupation;
-    private String aValid_ID = null;
-    private String aPhone_Number;
-    private String aEmail;
-    private boolean hasStatus; // owner or tenant
+    private String first_Name;
+    private String last_Name;
+    private String gender;
+    private String occupation;
+    private String valid_ID = null;
+    private String phone_Number;
+    private String email;
+    private boolean isStatus; // owner or tenant
 
-    public UserBaseClass(String aFirst_name, String aLast_name, String aGender,
-                         String aOccupation, String aValid_id, String aPhone_number, String aEmail, boolean hasStatus) {
-        this.aFirst_Name = aFirst_name;
-        this.aLast_Name = aLast_name;
-        this.aGender = aGender;
-        this.aOccupation = aOccupation;
-        this.aValid_ID = aValid_id;
-        this.aPhone_Number = aPhone_number;
-        this.aEmail = aEmail;
-        this.hasStatus = hasStatus;
+    public UserBaseClass(String aFirst_name, String aLast_name, String aEmail, String aOccupation,
+                         String aValid_id, String aPhone_number, String aGender, boolean isStatus) {
+        this.first_Name = aFirst_name;
+        this.last_Name = aLast_name;
+        this.gender = aGender;
+        this.occupation = aOccupation;
+        this.valid_ID = aValid_id;
+        this.phone_Number = aPhone_number;
+        this.email = aEmail;
+        this.isStatus = isStatus;
   }
 
-    public String getaFirst_Name() {
-        return aFirst_Name;
+
+
+  public boolean ValidateStatus(String status){
+      String s = this.isStatus  ? "tenant" : "owner";
+      return s.toLowerCase().equals(status);
+  }
+
+
+    public String getFirst_Name() {
+        return first_Name;
     }
 
-    public void setaFirst_Name(String aFirst_Name) {
-        this.aFirst_Name = aFirst_Name;
+    public void setFirst_Name(String aFirst_Name) {
+        this.first_Name = aFirst_Name;
     }
 
-    public String getaLast_Name() {
-        return aLast_Name;
+    public String getLast_Name() {
+        return last_Name;
     }
 
-    public void setaLast_Name(String aLast_Name) {
-        this.aLast_Name = aLast_Name;
+    public void setLast_Name(String aLast_Name) {
+        this.last_Name = aLast_Name;
     }
 
-    public String getaGender() {
-        return aGender;
+    public String getGender() {
+        return gender;
     }
 
-    public void setaGender(String aGender) {
-        this.aGender = aGender;
+    public void setGender(String aGender) {
+        this.gender = aGender;
     }
 
-    public String getaOccupation() {
-        return aOccupation;
+    public String getOccupation() {
+        return occupation;
     }
 
-    public void setaOccupation(String aOccupation) {
-        this.aOccupation = aOccupation;
+    public void setOccupation(String aOccupation) {
+        this.occupation = aOccupation;
     }
 
-    public String getaValid_ID() {
-        return aValid_ID;
+    public String getValid_ID() {
+        return valid_ID;
     }
 
-    public void setaValid_ID(String aValid_ID) {
-        this.aValid_ID = aValid_ID;
+    public void setValid_ID(String aValid_ID) {
+        this.valid_ID = aValid_ID;
     }
 
-    public String getaPhone_Number() {
-        return aPhone_Number;
+    public String getPhone_Number() {
+        return phone_Number;
     }
 
-    public void setaPhone_Number(String aPhone_Number) {
-        this.aPhone_Number = aPhone_Number;
+    public void setPhone_Number(String aPhone_Number) {
+        this.phone_Number = aPhone_Number;
     }
 
-    public String getaEmail() {
-        return aEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setaEmail(String aEmail) {
-        this.aEmail = aEmail;
+    public void setEmail(String aEmail) {
+        this.email = aEmail;
     }
 
-    public boolean isHasStatus() {
-        return hasStatus;
+    public boolean getIsStatus() {
+        return isStatus;
     }
 
-    public void setHasStatus(boolean hasStatus) {
-        this.hasStatus = hasStatus;
+    public void setIstatus(boolean isStatus) {
+        this.isStatus = isStatus;
     }
 }
