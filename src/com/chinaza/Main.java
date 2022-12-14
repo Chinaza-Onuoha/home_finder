@@ -15,42 +15,55 @@ public class Main {
      * request match the broadcast.
      */
 
-        /** Building and setting the value for a user owner Object from the UserOwner class*/
 
-        UserOwner david_one = new UserOwner("David","Onuoha","Male","Java Software Developer",
-                null,"+234-810-3104-747","developerworkpace@gmail.com",true);
+        /** Building and setting the value for a user owner Object from the UserOwner class
+         *
+         * Owner should only sign up with name, phone number or email
+         * */
+
+        UserOwner owner_one = new UserOwner("David","Onuoha","developerworkpace@gmail.com");
 
 
-        /** Building and setting the value for a user tenant Object from the UserTenant class*/
 
-        UserTenant michael_one = new UserTenant("Michael","Jonas","Male","Doctor",null,
-                "+19-344-6785-982","michael52@gmail.com",false);
+        /** Building and setting the value for a user tenant Object from the UserTenant class
+         *
+         * Tenant should only sign up with name, phone number or email*/
 
-        System.out.println(david_one.getaGender());
+        UserTenant tenant_one = new UserTenant("Michael","Jonas","mikejonas@gmail.com");
+
+
+
 
     /** Building and setting the value for a house Object from the House class*/
 
-        House two_Bedroom_Apartment = new House();
+        boolean hasBroadCast = owner_one.BroadCastHouse(owner_one.ValidateStatus("owner"),true);
 
-        two_Bedroom_Apartment.setHasStatus(true);
-        two_Bedroom_Apartment.setaAgency_Percentage(5.8);
-        two_Bedroom_Apartment.setaAgreement_Percentage(5.8);
-        two_Bedroom_Apartment.setaCharges(50_000);
-        two_Bedroom_Apartment.setaCaution_Fee(50_000);
-        two_Bedroom_Apartment.setaColour_Paint("white");
-        two_Bedroom_Apartment.setaLocation("Lekki");
-        two_Bedroom_Apartment.setaMinutes_Video(null);
-        two_Bedroom_Apartment.setaNumber_Rooms(2);
-        two_Bedroom_Apartment.setaNumber_Windows(5);
-        two_Bedroom_Apartment.setaType("terrace");
-        two_Bedroom_Apartment.setaRating("Good");
-        two_Bedroom_Apartment.setaUser_Owner_Profile("David");
-        two_Bedroom_Apartment.setaReview("The house actually gave more that its promise, i love it!!!");
-        two_Bedroom_Apartment.setaRent(1_2_000_000);
-        two_Bedroom_Apartment.setaSize("Big");
+         if(hasBroadCast){
+             House two_Bedroom_Apartment = new House(true,50_000,1_200_000,5.8,
+                     5.8,50_000,5,"5",null,
+                     "terrace","Good","The house actually gave more that its promise, i love it!!!","lekki","David","white","Big");
+             String status = two_Bedroom_Apartment.HouseDetails();
+             if (!two_Bedroom_Apartment.getIsTaken()) {
+                 two_Bedroom_Apartment.HouseDetails();
+             }
+             System.out.println(status);
+         }
+
+         //tenant_one.RentHouse(tenant_one.ValidateStatus("tenant"));
 
 
-
+/**What should be the behaviour of the House?
+ *
+ *
+ * What task can the owner perform?
+ * 1) it is the duty of the owner to broadcast a home(to create the house object).
+ * 2) It is the duty of the owner to increment a rent(tenant must be notified)
+ *
+ * What task can the tenant perform?
+ * 1) it is the duty of the tenant to rent a house.
+ * 2) It is the duty of the tenant to renew rent or not(the owner must be notified:
+ * the application will ask the user in the last 6 months before the expiration if the want to renew or not)
+ * */
 
     }
 }
